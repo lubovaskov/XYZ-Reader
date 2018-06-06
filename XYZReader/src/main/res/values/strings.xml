@@ -7,6 +7,12 @@
     <string name="action_settings">Settings</string>
     <string name="action_share">Share</string>
 
+    <string name="article_photo_description">Article photo</string>
+    <string name="article_photo_transition">article_photo_transition</string>
+
     <string name="up">Up</string>
+
+    <string name="shared_transation">shared_transition</string>
+    <string name="unkown_error_text">Unknown error</string>
 
 </resources>

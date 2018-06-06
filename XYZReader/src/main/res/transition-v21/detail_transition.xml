@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="300"
+    android:transitionOrdering="together">
+    <slide
+        android:slideEdge = "bottom">
+        <targets>
+            <target android:targetId= "@id/scrollview"/>
+        </targets>
+    </slide>
+    <slide
+        android:slideEdge="bottom">
+        <targets>
+            <target android:targetId="@id/share_fab"/>
+        </targets>
+    </slide>
+    <slide
+        android:slideEdge = "top">
+        <targets>
+            <target android:targetId="@id/appBarLayout"/>
+        </targets>
+    </slide>
+</transitionSet>
