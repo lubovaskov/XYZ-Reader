@@ -23,8 +23,8 @@
     <color name="theme_accent">@android:color/holo_orange_light</color>
     <color name="gray300">#E0E0E0</color>
 
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#757575</color>
-    <color name="highlight_text">#0277BD</color>
+    <color name="primary_text">#202020</color>
+    <color name="secondary_text">#808080</color>
+    <color name="highlight_text">#0376C0</color>
     <color name="photo_background_dark">#FF333333</color>
 </resources>
