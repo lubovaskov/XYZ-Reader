@@ -69,6 +69,8 @@ public class ArticleDetailFragment extends Fragment implements
     TextView bodyView;
     @BindView(R.id.meta_bar)
     LinearLayout metaBar;
+    @BindView(R.id.article_see_more)
+    TextView seeMoreView;
 
     private ImageView mPhotoView;
 
@@ -209,12 +211,26 @@ public class ArticleDetailFragment extends Fragment implements
                                 + mCursor.getString(ArticleLoader.Query.AUTHOR)
                                 + "</font>"));
             }
-            bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />")));
+
+            //load the first 400 characters only
+            String bodyText = mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />");
+            bodyText = bodyText.substring(0, (bodyText.length() <= 400 ? bodyText.length() : 400));
+            bodyView.setText(Html.fromHtml(bodyText));
+            //display the "see more" link to load the whole text
+            seeMoreView.setVisibility(View.VISIBLE);
+            seeMoreView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    seeMoreView.setVisibility(View.GONE);
+                    bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />")));
+                }
+            });
         } else {
             mRootView.setVisibility(View.GONE);
             titleView.setText("N/A");
             bylineView.setText("N/A");
             bodyView.setText("N/A");
+            seeMoreView.setVisibility(View.GONE);
         }
     }
 
